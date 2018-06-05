@@ -1,5 +1,5 @@
 {
-    "name": "yolonode-js-build-gpu",
+    "name": "yolonode-js-build",
     "version": "0.0.1",
     "description": "build for darknet yolo",
     "main": "index.js",
