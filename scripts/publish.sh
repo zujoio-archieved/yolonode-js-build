@@ -49,8 +49,6 @@ echo "⌛ ⌛ Published ${PACKAGE_NAME}-gpu to npm."
 # Revert GPU changes:
 git checkout .
 
-exit
-
 
 if [ $# -ne 0 ]
   then
