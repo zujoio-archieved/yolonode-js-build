@@ -39,7 +39,7 @@ npm pack
 echo '⌛ ⌛ Published CPU-VERSION a new package to npm.'
 
 # Build GPU:
-sed -i -e 's/$PACKAGE_NAME"/$PACKAGE_NAME-gpu"/' package.json
+sed -i -e 's/${PACKAGE_NAME}"/${PACKAGE_NAME}-gpu"/' package.json
 
 npm pack
 #npm publish
