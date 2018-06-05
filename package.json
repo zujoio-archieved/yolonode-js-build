@@ -1,6 +1,6 @@
 {
-    "name": "yolonode-js-build",
-    "version": "0.0.0",
+    "name": "yolonode-js-build-gpu",
+    "version": "0.0.1",
     "description": "build for darknet yolo",
     "main": "index.js",
     "scripts": {
@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/zujoio/yolonode-js-build.git"
+        "url": "git+https://github.com/zujoio/yolonode-js-build-gpu.git"
     },
     "keywords": [
         "yolo build",
@@ -18,9 +18,9 @@
     "author": "arjun-kava",
     "license": "Apache 2.0",
     "bugs": {
-        "url": "https://github.com/zujoio/yolonode-js-build/issues"
+        "url": "https://github.com/zujoio/yolonode-js-build-gpu/issues"
     },
-    "homepage": "https://github.com/zujoio/yolonode-js-build#readme",
+    "homepage": "https://github.com/zujoio/yolonode-js-build-gpu#readme",
     "dependencies": {
         "opencvnode-js-build": "0.0.7",
         "npmlog": "^4.1.2"
