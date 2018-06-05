@@ -32,8 +32,6 @@ if ! [[ "$ORIGIN" =~ $PACKAGE_NAME ]]; then
   exit
 fi
 
-exit
-
 
 # Build CPU:
 npm pack
