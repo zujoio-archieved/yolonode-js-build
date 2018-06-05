@@ -32,23 +32,21 @@ if ! [[ "$ORIGIN" =~ $PACKAGE_NAME ]]; then
   exit
 fi
 
-
 # Build CPU:
 npm pack
-#npm publish
-echo '⌛ ⌛ Published CPU-VERSION a new package to npm.'
+npm publish
+echo "⌛ ⌛ Published ${PACKAGE_NAME} a new package to npm."
 
 # Build GPU:
 sed -i -e "s/${PACKAGE_NAME}/${PACKAGE_NAME}-gpu/" package.json
 
 npm pack
-#npm publish
-echo '⌛ ⌛ Published GPU-VERSION a new package to npm.'
+npm publish
+echo "⌛ ⌛ Published ${PACKAGE_NAME}-gpu to npm.""
 
 # Revert GPU changes:
 git checkout .
 
-exit
 
 if [ $# -ne 0 ]
   then
