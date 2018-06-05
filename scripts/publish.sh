@@ -35,7 +35,7 @@ fi
 
 # Build CPU:
 npm pack
-#npm publish
+npm publish
 echo "⌛ ⌛ Published ${PACKAGE_NAME} a new package to npm."
 
 # Build GPU:
@@ -43,7 +43,7 @@ sed -i -e "s/${PACKAGE_NAME}/${PACKAGE_NAME}-gpu/" package.json
 sed -i -e "s/${DEPENDENT_OPENCV_PACKAGE_NAME}/${DEPENDENT_OPENCV_PACKAGE_NAME}-gpu/" package.json
 
 npm pack
-#npm publish
+npm publish
 echo "⌛ ⌛ Published ${PACKAGE_NAME}-gpu to npm."
 
 # Revert GPU changes:
@@ -52,6 +52,7 @@ git checkout .
 
 if [ $# -ne 0 ]
   then
+    git pull
     git push # verify everthing on cloud before creting tag
     git tag $1
     git push --tags
