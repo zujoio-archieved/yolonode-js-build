@@ -11,6 +11,9 @@ const yoloBuildDir = path.join(yoloSrcDir, 'obj');
 const yoloInclude = path.join(yoloSrcDir, 'include');
 const yoloLibDir = yoloSrcDir;
 const yoloRepo  ="https://github.com/pjreddie/darknet.git";
+const yoloModules =[
+    'darknet'
+];
 
 let replacementsMakeFile = [
     //OPENCV=0
@@ -47,16 +50,11 @@ module.exports = {
     rootDir,
     yoloRootDir,
     yoloSrcDir,
-
     yoloBuildDir,
-
     yoloInclude,
-
     yoloLibDir,
-
     yoloRepo,
-
     numberOfCores: os.cpus().length,
-
-    replacementsMakeFile
+    replacementsMakeFile,
+    yoloModules
 }

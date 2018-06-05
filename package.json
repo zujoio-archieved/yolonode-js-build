@@ -1,7 +1,7 @@
 {
     "name": "yolonode-js-build",
     "version": "0.0.0",
-    "description": "build for opencv",
+    "description": "build for darknet yolo",
     "main": "index.js",
     "scripts": {
         "install": "node ./install.js",
