@@ -69,10 +69,10 @@ const spawn_ = async (cmd, args, opts) => {
  */
 const isCPU_ = () => {
     const isPackage = packageJson && packageJson.name;
-    if(isPackage && packageJson.name == 'opencvnode-js-build'){
+    if(isPackage && packageJson.name == 'yolonode-js-build'){
         return 1
     }
-    else if(isPackage && packageJson.name == 'opencvnode-js-build-gpu') {
+    else if(isPackage && packageJson.name == 'yolonode-js-build-gpu') {
         return 0;
     }
     else{

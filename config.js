@@ -1,8 +1,9 @@
 const path = require('path');
 const os = require('os');
-const cvBuild = require('opencvnode-js-build');
-
 const { isCPU } = require('./native');
+const cvBuild =  require(isCPU() ? 'opencvnode-js-build': 'opencvnode-js-build-gpu' );
+
+
 
 const rootDir = __dirname;
 const yoloRootDir = path.join(rootDir, 'darknet');
