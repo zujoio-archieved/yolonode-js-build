@@ -1,6 +1,6 @@
 
 const { isCPU } = require('./native');
-const cvBuild =  require(isCPU() ? 'opencvnode-js-build': 'opencvnode-js-build-gpu' );
+const opencvNodeJsBuild =  require(isCPU() ? 'opencvnode-js-build': 'opencvnode-js-build-gpu' );
 
 const {
     rootDir,
