@@ -10,6 +10,7 @@ const yoloRootDir = path.join(rootDir, 'darknet');
 const yoloSrcDir = path.join(yoloRootDir, 'darknet');
 const yoloBuildDir = path.join(yoloSrcDir, 'obj');
 const yoloInclude = path.join(yoloSrcDir, 'include');
+const yoloIncludeSrc = path.join(yoloSrcDir, 'src');
 const yoloLibDir = yoloSrcDir;
 const yoloRepo  ="https://github.com/pjreddie/darknet.git";
 const yoloModules =[
@@ -53,6 +54,7 @@ module.exports = {
     yoloSrcDir,
     yoloBuildDir,
     yoloInclude,
+    yoloIncludeSrc,
     yoloLibDir,
     yoloRepo,
     numberOfCores: os.cpus().length,
