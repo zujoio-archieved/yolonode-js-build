@@ -10,6 +10,7 @@ const {
     yoloBuildDir,
 
     yoloInclude,
+    yoloIncludeSrc,
 
     yoloLibDir,
 
@@ -22,8 +23,11 @@ module.exports = {
     yoloSrcDir,
     yoloBuildDir,
     yoloInclude,
+    yoloIncludeSrc,
     yoloLibDir,
     yoloModules,
+
+    libs: yoloModules,
 
     isCPU: isCPU(),
 

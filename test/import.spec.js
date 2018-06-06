@@ -29,30 +29,37 @@ const checkArrayHaveEle = (array) => {
 
 describe('check CPU / GPU mode', () => {
     it('should have either CPU / GPU mode', () => {
-        expect(cvBuild.isCPU).to.not.eql(undefined);
+        expect(yoloNodeJSBuild.isCPU).to.not.eql(undefined);
     })
 })
 
-describe('opencv import libs and includes', () => {
-    it('should check opencvSrc is not undefined.', () => {
-        resolvePath(cvBuild.opencvSrc);
+describe('yolo import libs and includes', () => {
+    it('should check rootDir is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.rootDir);
     });
-    it('should check opencvContribSrc is not undefined.', () => {
-        resolvePath(cvBuild.opencvContribSrc);
+    it('should check yoloRootDir is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloRootDir);
     });
-    it('should check opencvBuild is not undefined.', () => {
-        resolvePath(cvBuild.opencvBuild);
+    it('should check yoloSrcDir is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloSrcDir);
     });
-    it('should check opencvInclude is not undefined.', () => {
-        resolvePath(cvBuild.opencvInclude);
+    it('should check yoloBuildDir is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloBuildDir);
     });
-    it('should check opencvIncludeCC is not undefined.', () => {
-        resolvePath(cvBuild.opencvIncludeCC);
+    it('should check yoloInclude is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloInclude);
     });
-    it('should check opencvLibDir is not undefined.', () => {
-        resolvePath(cvBuild.opencvLibDir);
+    it('should check yoloIncludeSrc is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloIncludeSrc);
     });
-    it('should check opencvLibDir is not undefined.', () => {
-        checkArrayHaveEle(cvBuild.libs);
+    it('should check yoloLibDir is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloLibDir);
+    });
+    it('should check yoloLibDir is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloLibDir);
+    });
+
+    it('should check libs is not undefined and have element.', () => {
+        checkArrayHaveEle(yoloNodeJSBuild.libs);
     });
 });
