@@ -22,7 +22,6 @@
     },
     "homepage": "https://github.com/zujoio/yolonode-js-build-gpu#readme",
     "dependencies": {
-        "opencvnode-js-build": "0.0.7",
         "npmlog": "^4.1.2"
     },
     "devDependencies": {
