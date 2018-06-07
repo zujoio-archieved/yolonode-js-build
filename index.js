@@ -1,6 +1,5 @@
 
 const { isCPU } = require('./native');
-const opencvNodeJsBuild =  require(isCPU() ? 'opencvnode-js-build': 'opencvnode-js-build-gpu' );
 
 const {
     rootDir,
@@ -14,6 +13,7 @@ const {
 
     yoloLibDir,
 
+    commonModules,
     yoloModules
 } = require('./config');
 
@@ -25,11 +25,8 @@ module.exports = {
     yoloInclude,
     yoloIncludeSrc,
     yoloLibDir,
-    yoloModules,
 
-    libs: yoloModules,
+    libs: (yoloModules && yoloModules.length ? yoloModules : [] ).concat(commonModules && commonModules.length ? commonModules : [] ),
 
-    isCPU: isCPU(),
-
-    opencvNodeJsBuild: opencvNodeJsBuild
+    isCPU: isCPU()
 }

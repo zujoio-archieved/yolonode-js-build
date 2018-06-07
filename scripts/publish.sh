@@ -10,7 +10,6 @@ if [ $# -eq 0 ]
 fi
 
 PACKAGE_NAME="yolonode-js-build"
-DEPENDENT_OPENCV_PACKAGE_NAME="opencvnode-js-build"
 
 # if you forget to commit
 PORCELAIN=`git status --porcelain`
@@ -40,7 +39,6 @@ echo "⌛ ⌛ Published ${PACKAGE_NAME} a new package to npm."
 
 # Build GPU:
 sed -i -e "s/${PACKAGE_NAME}/${PACKAGE_NAME}-gpu/" package.json
-sed -i -e "s/${DEPENDENT_OPENCV_PACKAGE_NAME}/${DEPENDENT_OPENCV_PACKAGE_NAME}-gpu/" package.json
 
 npm pack
 npm publish

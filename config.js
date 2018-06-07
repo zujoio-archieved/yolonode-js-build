@@ -1,9 +1,13 @@
 const path = require('path');
 const os = require('os');
 const { isCPU } = require('./native');
-const cvBuild =  require(isCPU() ? 'opencvnode-js-build': 'opencvnode-js-build-gpu' );
 
-
+// common modules required for compiling yolo
+const commonModules = [
+    'm',
+    'pthread',
+    'stdc++'
+]
 
 const rootDir = __dirname;
 const yoloRootDir = path.join(rootDir, 'darknet');
@@ -17,23 +21,7 @@ const yoloModules =[
     'darknet'
 ];
 
-let replacementsMakeFile = [
-    //OPENCV=0
-    {
-        original: "OPENCV=0",
-        replace: "OPENCV=1"
-    },
-    // cv --libs
-    {
-        original: "`pkg-config --libs opencv`",
-        replace: `-L${cvBuild.opencvLibDir} ${cvBuild.libs.map( lib => `-l${lib}` ).join(' ')}`
-    },
-    // cv --include
-    {
-        original: "`pkg-config --cflags opencv`",
-        replace: `-I${cvBuild.opencvIncludeCC} -I${cvBuild.opencvInclude}`
-    }
-]
+let replacementsMakeFile = []
 
 if(!isCPU()){
     //GPU
@@ -59,5 +47,6 @@ module.exports = {
     yoloRepo,
     numberOfCores: os.cpus().length,
     replacementsMakeFile,
+    commonModules,
     yoloModules
 }
