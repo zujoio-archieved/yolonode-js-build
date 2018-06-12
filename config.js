@@ -37,6 +37,11 @@ if(!isCPU()){
         original: "CUDNN=0",
         replace: "CUDNN=1"
     })
+    //OPENMP
+    replacementsMakeFile.push({
+        original: "OPENMP=0",
+        replace: "OPENMP=1"
+    })
 }
 
 module.exports = {
