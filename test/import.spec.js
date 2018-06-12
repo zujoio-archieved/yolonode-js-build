@@ -58,6 +58,15 @@ describe('yolo import libs and includes', () => {
     it('should check yoloLibDir is not undefined.', () => {
         resolvePath(yoloNodeJSBuild.yoloLibDir);
     });
+    it('should check yoloData is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloData);
+    });
+    it('should check yoloExamples is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloExamples);
+    });
+    it('should check yoloCfg is not undefined.', () => {
+        resolvePath(yoloNodeJSBuild.yoloCfg);
+    });
 
     it('should check libs is not undefined and have element.', () => {
         checkArrayHaveEle(yoloNodeJSBuild.libs);

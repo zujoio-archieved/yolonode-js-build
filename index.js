@@ -14,7 +14,11 @@ const {
     yoloLibDir,
 
     commonModules,
-    yoloModules
+    yoloModules,
+
+    yoloData,
+    yoloExamples,
+    yoloCfg
 } = require('./config');
 
 module.exports = {
@@ -28,5 +32,9 @@ module.exports = {
 
     libs: (yoloModules && yoloModules.length ? yoloModules : [] ).concat(commonModules && commonModules.length ? commonModules : [] ),
 
-    isCPU: isCPU()
+    isCPU: isCPU(),
+
+    yoloData,
+    yoloExamples,
+    yoloCfg
 }
