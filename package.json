@@ -1,6 +1,6 @@
 {
     "name": "yolonode-js-build",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "build for darknet yolo",
     "main": "index.js",
     "scripts": {
