@@ -24,7 +24,13 @@ const yoloModules =[
     'darknet'
 ];
 
-let replacementsMakeFile = []
+let replacementsMakeFile = [
+    //OPENMP
+    {
+        original: "OPENMP=0",
+        replace: "OPENMP=1"
+    }
+]
 
 if(!isCPU()){
     //GPU
@@ -37,10 +43,10 @@ if(!isCPU()){
         original: "CUDNN=0",
         replace: "CUDNN=1"
     })
-    //OPENMP
+    // ARCHITECTURE
     replacementsMakeFile.push({
-        original: "OPENMP=0",
-        replace: "OPENMP=1"
+        original: "# ARCH= -gencode arch=compute_52,code=compute_52",
+        replace: "ARCH= -gencode arch=compute_37,code=[sm_37]"
     })
 }
 
