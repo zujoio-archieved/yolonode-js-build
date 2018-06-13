@@ -9,6 +9,17 @@ const commonModules = [
     'stdc++'
 ]
 
+const cudaModules = [
+    "cuda",
+    "cudart",
+    "cublas", 
+    "curand"
+]
+const cudaInclude = "/usr/local/cuda/include";
+const cudaTargetInclude = "/usr/local/cuda/targets/x86_64-linux/include";
+const cudaLib = "/usr/local/cuda/lib64";
+const cudaTargetLib = "/usr/local/cuda/targets/x86_64-linux/lib";
+
 const rootDir = __dirname;
 const yoloRootDir = path.join(rootDir, 'darknet');
 const yoloSrcDir = path.join(yoloRootDir, 'darknet');
@@ -52,6 +63,16 @@ if(!isCPU()){
 
 module.exports = {
     rootDir,
+
+    commonModules,
+    
+    cudaModules,
+    cudaInclude,
+    cudaTargetInclude,
+    cudaLib,
+    cudaTargetLib,
+    
+
     yoloRootDir,
     yoloSrcDir,
     yoloBuildDir,
@@ -61,7 +82,6 @@ module.exports = {
     yoloRepo,
     numberOfCores: os.cpus().length,
     replacementsMakeFile,
-    commonModules,
     yoloModules,
 
     yoloData,
