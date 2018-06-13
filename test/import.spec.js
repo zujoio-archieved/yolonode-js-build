@@ -72,3 +72,20 @@ describe('yolo import libs and includes', () => {
         checkArrayHaveEle(yoloNodeJSBuild.libs);
     });
 });
+
+if(yoloNodeJSBuild && yoloNodeJSBuild.isCPU){
+    describe('cuda import libs and includes', () => {
+        it('should check cudaInclude is not undefined.', () => {
+            resolvePath(yoloNodeJSBuild.cudaInclude);
+        });
+        it('should check cudaTargetInclude is not undefined.', () => {
+            resolvePath(yoloNodeJSBuild.cudaTargetInclude);
+        });
+        it('should check cudaLib is not undefined.', () => {
+            resolvePath(yoloNodeJSBuild.cudaLib);
+        });
+        it('should check cudaTargetLib is not undefined.', () => {
+            resolvePath(yoloNodeJSBuild.cudaTargetLib);
+        });
+    });
+}

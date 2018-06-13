@@ -1,8 +1,20 @@
 
-const { isCPU } = require('./native');
+const { 
+    isCPU,
+    isUnix 
+} = require('./native');
 
 const {
     rootDir,
+
+    commonModules,
+
+    cudaModules,
+    cudaInclude,
+    cudaTargetInclude,
+    cudaLib,
+    cudaTargetLib,
+
     yoloRootDir,
     yoloSrcDir,
 
@@ -13,7 +25,6 @@ const {
 
     yoloLibDir,
 
-    commonModules,
     yoloModules,
 
     yoloData,
@@ -21,8 +32,18 @@ const {
     yoloCfg
 } = require('./config');
 
+let libs = (yoloModules && yoloModules.length ? yoloModules : [] )
+            .concat(commonModules && commonModules.length ? commonModules : [] )
+            .concat(cudaModules && cudaModules.length && !isCPU() ? cudaModules : [] )
+
 module.exports = {
     rootDir,
+
+    cudaInclude,
+    cudaTargetInclude,
+    cudaLib,
+    cudaTargetLib,
+
     yoloRootDir,
     yoloSrcDir,
     yoloBuildDir,
@@ -30,7 +51,7 @@ module.exports = {
     yoloIncludeSrc,
     yoloLibDir,
 
-    libs: (yoloModules && yoloModules.length ? yoloModules : [] ).concat(commonModules && commonModules.length ? commonModules : [] ),
+    libs: libs,
 
     isCPU: isCPU(),
 
